@@ -1,79 +1,61 @@
-# Trabajo de Luciana Sosa
+# Chess in Python ♟️
 
-# CircleCI
+University software project developed in **Python**, focused on object-oriented design, testing, containerization and continuous integration.
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/um-computacion-tm/ajedrez-2024-lgsosa/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/um-computacion-tm/ajedrez-2024-lgsosa/tree/main)
+## Highlights
 
-# Maintainability
+- Python application implementing chess logic and piece movement rules
+- **Dockerized** execution environment
+- Automated tests and coverage configuration
+- **CircleCI** continuous integration pipeline
+- Code quality monitoring with **Code Climate**
+- Git/GitHub workflow used throughout development
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/28f89d87fb4e58907aa5/maintainability)](https://codeclimate.com/github/um-computacion-tm/ajedrez-2024-lgsosa/maintainability)
+## Tech stack
 
-# Test Coverage
+`Python` · `Docker` · `CircleCI` · `Git` · `GitHub` · `Testing` · `Code Climate`
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/28f89d87fb4e58907aa5/test_coverage)](https://codeclimate.com/github/um-computacion-tm/ajedrez-2024-lgsosa/test_coverage)
+## Run locally
 
+### Requirements
 
-
-<h1 style="text-align:center; color:#3498db;">Juego de Ajedrez en Python</h1>
-
-
-## Introducción
-
-Este documento detalla el proceso de desarrollo de un juego de Ajedrez en Python, siguiendo las reglas y características descritas en el artículo de Wikipedia sobre Ajedrez. El juego se implementará en una interfaz de consola, permitiendo a los jugadores disfrutar de partidas de Ajedrez en un entorno virtual.
-
-
-### 1. Jugabilidad
-Los jugadores deben poder mover sus piezas según las reglas de movimiento específicas para cada tipo de pieza.
-(al final del documento podrá consultar los movimientos de cada pieza)
-
-### 2. Fin del juego
-El juego debe finalizar cuando:
-- Un jugador se queda sin piezas.
-- Los jugadores deciden terminar la partida de mutuo acuerdo (empate).
-
-## Procedimiento para Instalar y Ejecutar el Juego
-
-### Requisitos previos
-Para poner en funcionamiento el juego de ajedrez en modo de testing y modo desplegado con Docker, necesitas tener instalados los siguientes componentes:
 - Docker
 - Python 3.x
 
-### 1. Clonar el repositorio
-Primero, clona el repositorio oficial del juego de Ajedrez:
+### Clone the repository
+
 ```bash
-git clone https://github.com/um-computacion-tm/ajedrez-2024-lgsosa.git
+git clone https://github.com/lgsosa/Ajedrez.git
+cd Ajedrez
 ```
-### 2. Instalar dependencias
-```
+
+### Install dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-### 3. Construir la imagen de Docker
-Para construir la imagen de Docker, ejecuta el siguiente comando en la raíz del proyecto:
+### Build the Docker image
+
 ```bash
-docker buildx build -t ajedrez-2024-lgsosa .
+docker build -t chess-python .
 ```
 
-### 4. Ejecutar el contenedor de Docker
-Después de construir la imagen, ejecuta el contenedor con el siguiente comando:
+### Run the container
+
 ```bash
-docker run -i ajedrez-2024-lgsosa
+docker run -i chess-python
 ```
 
-Este comando iniciará el juego de Ajedrez en la consola. Sigue las instrucciones que aparecen para comenzar una partida.
+## CI/CD and quality
 
-## 3. Jugabilidad
+This project includes configuration for automated validation through **CircleCI**, alongside maintainability and test coverage tooling. It was developed as part of my Computer Engineering studies and gave me hands-on experience with containerized applications and CI workflows.
 
-Cada jugador alterna turnos para mover una pieza por turno de acuerdo a las siguientes reglas de movimiento:
+## What I practiced
 
-- **Rey**: Se mueve exactamente una casilla en cualquier dirección: horizontal, vertical o diagonal. Movimiento especial: Enroque (el rey se mueve dos casillas hacia una torre, y la torre se mueve a la casilla adyacente al rey).
-  
-- **Reina**: Se mueve cualquier número de casillas en cualquier dirección: horizontal, vertical o diagonal.
-
-- **Torre**: Se mueve cualquier número de casillas en dirección horizontal o vertical. No puede saltar sobre otras piezas. Movimiento especial: Enroque (involucra al rey).
-
-- **Alfil**: Se mueve cualquier número de casillas en dirección diagonal. No puede saltar sobre otras piezas.
-
-- **Caballo**: Se mueve en forma de "L": dos casillas en una dirección y luego una casilla perpendicular, o una casilla en una dirección y dos casillas perpendiculares. Los caballos pueden saltar sobre otras piezas.
-
-- **Peón**: Se mueve hacia adelante una casilla. En su primer movimiento, un peón puede avanzar dos casillas. Los peones capturan en diagonal. Movimientos especiales: En passant (un peón puede capturar a otro peón enemigo que haya avanzado dos casillas en su primer movimiento, como si hubiera avanzado solo una) y promoción (cuando un peón alcanza la última fila del oponente, puede ser promovido a cualquier otra pieza, usualmente una reina).
+- Structuring a Python project
+- Writing and running automated tests
+- Packaging an application with Docker
+- Working with a CI pipeline
+- Tracking maintainability and test coverage
+- Using Git in an academic software project
